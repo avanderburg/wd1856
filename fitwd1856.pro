@@ -6,7 +6,7 @@ pro fitwd1856
   ldfreespit = 0
   testremovepoint = 0; check whether removing a single point ~4-5 sigma outlier makes a signifiant difference - changes dilution to -.004
   ld0 = 0
-  ecc = 1
+  ecc = 0
   syst = systime()
   closeall
   !p.multi = 0
@@ -210,8 +210,8 @@ stop
 
 
   if rerun then begin
-    nlink =  10
-    nburnin = 0
+    nlink =  200000
+    nburnin = 50000
     nwalk = 50
 
     filename = '/data/k2/misc/wd1856transitpars-'+syst+'-nlink'+trim(nlink)+'-nwalk'+trim(nwalk)+'-nburn'+trim(nburnin)
